@@ -43,13 +43,13 @@
 <body>
   <header>
     <div class="ui container">
-      <div class="ui inverted icon menu">
+      <div class="ui inverted icon menu wrapped">
         <a href="{% url 'geocontrib:index' %}" class="header item">
           <img class="ui mini right spaced image" src="{{ LOGO_PATH }}">
           {{ APPLICATION_NAME }}
         </a>
         {% if project %}
-          <div class="ui dropdown item">
+          <div class="project ui dropdown item">
             Projet&nbsp;: {{ project.title }}
             <i class="dropdown icon"></i>
             <div class="menu" style="z-index:401;">
@@ -76,7 +76,7 @@
               {{ user.get_full_name|default:user.username }}
             </a>
             {% if project or user.is_administrator %}
-            <div class="item ui label">
+            <div class="item ui">
               {% if project %}{{ USER_LEVEL_PROJECTS|lookup:project.slug }}<br>{% endif %}
               {% if user.is_administrator == True %}Gestionnaire métier{% endif %}
             </div>

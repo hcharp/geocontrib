@@ -10,6 +10,25 @@ main {
   padding: 2em 0em;
 }
 
+.wrapped {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+@media screen and (max-width: 767px) {
+  .ui.wrapped.menu .right.menu {
+    margin-left: 0 !important;
+  }
+  .right.menu a:first-of-type::before{
+    width: 0;
+  }
+
+  .project {
+    max-width: 150px;
+    text-overflow: ellipsis;
+  }
+}
 
 /* ---------------------------------- */
             /* MAIN */
